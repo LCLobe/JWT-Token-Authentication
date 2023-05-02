@@ -5,6 +5,8 @@ from src.models import db
 from src.admin import setup_admin
 from src.routes import api
 from src.utils import generate_sitemap
+from flask_jwt_extended import JWTManager
+
 
 # create the app
 app = Flask(__name__)
@@ -19,6 +21,10 @@ app.register_blueprint(api, url_prefix='/') # API prefix can be added here
 
 # migrade database to save work
 migrate = Migrate(app, db)
+
+# Setup the Flask-JWT-Extended extension
+app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this "super secret" with something else!
+jwt = JWTManager(app)
 
 @app.route('/')
 def  index():
