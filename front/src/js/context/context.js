@@ -1,24 +1,36 @@
 import React, { createContext, useContext, useState, useEffect} from "react";
 import {fetchPrivate} from "../utils/fetchPrivate.js";
 import handleLogin from "../utils/handleLogin.js";
+import handleCreateUser from "../utils/handleCreateUser.js";
+import isUserLoggedIn from "../utils/isUserLoggedIn.js";
 
 const Context = createContext();
 
 export const ContextProvider = ({children}) => {
 
-    const [myUserInfo, setMyUserInfo] = useState([]);
-    
-        //Hooks
+    const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
+    const [token, setToken] = useState(window.localStorage.getItem("jwt-token"));
 
-    
-        //LocalStorage
+    //Hooks
 
-        //Flux Context Info
-    const store ={ 
+
+    //LocalStorage
+    useEffect(()=>{
+        isUserLoggedIn(setUserIsLoggedIn,fetchPrivate);
+        console.log("Contexto: ", userIsLoggedIn,token);
+        }
+    ,[token]);
+
+    //Flux Context Info
+    const store ={
+        userIsLoggedIn 
     };
     const actions ={   
         fetchPrivate,
-        handleLogin
+        handleLogin,
+        handleCreateUser,
+        setToken,
+        setUserIsLoggedIn
     };
 
     return (

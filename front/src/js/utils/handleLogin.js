@@ -26,4 +26,4 @@ const handleLogin = async (username, password, handleLoginOk ) => { //handleLogi
     return data
 }
 
-export default handleLogin
+export default handleLogin;

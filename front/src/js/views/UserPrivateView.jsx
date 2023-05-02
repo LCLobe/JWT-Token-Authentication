@@ -1,10 +1,21 @@
 import React, { useMemo, useEffect } from 'react';
+import { useNavigate, Navigate } from 'react-router-dom';
+
 import useAppContext from '../context/Context.js';
 
 const UserPrivateView = () => {
     
-    const {actions} = useAppContext();
+    const {store, actions} = useAppContext();
     const {fetchPrivate} = actions;
+    const {userIsLoggedIn} = store;
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!userIsLoggedIn) {
+            navigate('/Login');
+        }
+    }, []);
 
     const myData = useMemo(async ()=>fetchPrivate(),[])
     const myListOfData = [];

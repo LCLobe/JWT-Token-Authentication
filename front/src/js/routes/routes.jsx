@@ -22,6 +22,7 @@ export const Router = createBrowserRouter([
             {
                 path: '/dashboard'  ,
                 element: <UserPrivateView />,
+                private:  true
             } ,
 
 
