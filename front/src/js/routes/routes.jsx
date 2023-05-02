@@ -1,9 +1,10 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-import CreateUser from "../views/createUser.jsx";
-import Login from "../views/login.jsx";
-import UserPrivateView from "../views/userPrivateView.jsx";
+import CreateUser from "../views/CreateUser.jsx";
+import Login from "../views/Login.jsx";
+import UserPrivateView from "../views/UserPrivateView.jsx";
+import Layout from "../views/Layout.jsx";
 
 export const Router = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ export const Router = createBrowserRouter([
                 element: <CreateUser />
             },
             {
-                path: '/Login'  ,
+                path: '/'  ,
                 element: <Login />,
             } ,
             {
