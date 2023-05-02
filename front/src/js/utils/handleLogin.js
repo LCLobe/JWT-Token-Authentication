@@ -1,4 +1,4 @@
-const handleLogin = async (username, password, handleLoginOk ) => { //handleLoginError
+const handleLogin = async (username, password, handle ) => { //handleLoginError
     
     const myObject = { username, password};
     console.log(myObject);
@@ -21,8 +21,8 @@ const handleLogin = async (username, password, handleLoginOk ) => { //handleLogi
     // save your token in the localStorage
    //also you should set your user into the store using the setStore function
     localStorage.setItem("jwt-token", data.token);
-
-    handleLoginOk("/dashboard"); //Ha explotado
+    handle(data.token)
+    
     return data
 }
 

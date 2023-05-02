@@ -7,7 +7,7 @@ function LoginForm() {
   const [password, setPassword] = useState('');
 
   const {actions } = useAppContext();
-  const {handleLogin} = actions;
+  const {handleLogin, setToken  } = actions;
  
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ function LoginForm() {
     // Aquí podrías enviar los datos a un servidor o hacer alguna otra cosa con ellos
     console.log('Username:', username);
     console.log('Password:', password);
-    handleLogin(username, password, navigate);
+    handleLogin(username, password, setToken);
   };
 
   return (
