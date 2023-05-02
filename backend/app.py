@@ -6,6 +6,7 @@ from src.admin import setup_admin
 from src.routes import api
 from src.utils import generate_sitemap
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 
 
 # create the app
@@ -18,6 +19,8 @@ db.init_app(app)
 setup_admin(app)
 # initiate blueprints
 app.register_blueprint(api, url_prefix='/') # API prefix can be added here
+# enable CORS
+CORS(app)
 
 # migrade database to save work
 migrate = Migrate(app, db)
