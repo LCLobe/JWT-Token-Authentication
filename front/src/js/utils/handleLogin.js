@@ -22,7 +22,7 @@ const handleLogin = async (username, password, handleLoginOk ) => { //handleLogi
    //also you should set your user into the store using the setStore function
     localStorage.setItem("jwt-token", data.token);
 
-    await handleLoginOk("/dashboard");
+    handleLoginOk("/dashboard"); //Ha explotado
     return data
 }
 

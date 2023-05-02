@@ -20,12 +20,12 @@ const UserPrivateView = () => {
     const myData = useMemo(async ()=>fetchPrivate(),[])
     const myListOfData = [];
 
-    useEffect(()=>{console.log(myData)},[myData]);
+    useEffect(()=>{console.log("myData",myData)},[myData]);
         //Guarda?
     for (let key in myData) { 
         myListOfData.push(<li> {key}: {myData[key]}</li>);
     };
-
+    console.log("myListOfData",myListOfData);
     return (
         <div>
             <p>UserPrivateView</p>

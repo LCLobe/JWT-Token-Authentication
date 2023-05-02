@@ -31,7 +31,7 @@ const Navbar = () => {
       //Remove user token
       localStorage.removeItem("jwt-token");
       setToken(null);
-      //setUserIsLoggedIn(false);
+      setUserIsLoggedIn(false);
 
     };
 
