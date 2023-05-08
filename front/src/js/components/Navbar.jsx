@@ -1,6 +1,6 @@
 import React , { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import useAppContext from '../context/Context.js';
+import useAppContext from '../context/Context.jsx';
 
 const Navbar = () => {
 

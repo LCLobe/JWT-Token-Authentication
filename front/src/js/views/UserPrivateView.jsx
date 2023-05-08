@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
 
-import useAppContext from '../context/Context.js';
+import useAppContext from '../context/Context.jsx';
 
 const UserPrivateView = () => {
     
